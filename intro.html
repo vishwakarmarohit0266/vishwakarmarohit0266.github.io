@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="3; url=https://rohit-123-maker.github.io/Google-clone/">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rohit Vishwakarma|@ about us</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+   <style>    :root{
+      --bg-1: #0f1724;
+      --bg-2: #071028;
+      --card: rgba(255,255,255,0.03);
+      --muted: #98a0b3;
+      --accent: #6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+      --glass-strong: rgba(255,255,255,0.06);
+    }
+
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(102,126,234,0.09), transparent 8%),
+                  radial-gradient(900px 700px at 90% 90%, rgba(45,212,191,0.06), transparent 8%),
+                  linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 36px;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Top nav */
+    .nav {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo {
+      width:44px;height:44px;border-radius:8px;
+      background:linear-gradient(135deg,#6ee7b7,#60a5fa);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#06202b;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+      flex:0 0 44px;
+    }
+    .brand h1{font-size:16px;font-weight:700;letter-spacing:-0.2px}
+    .nav a{
+      color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;font-size:14px;
+    }
+    .nav .actions{display:flex;align-items:center;gap:8px}
+
+    /* Main container */
+    .wrap{
+      max-width:1100px;
+      width:100%;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Left - hero & projects */
+    .left {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:12px;
+      padding:22px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .hero {
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .avatar{
+      width:84px;height:84px;border-radius:12px;flex:0 0 84px;
+      background: linear-gradient(135deg,#7dd3fc,#7c3aed);display:flex;align-items:center;justify-content:center;
+      font-size:24px;font-weight:800;color:#071028;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .hero .name{font-size:20px;font-weight:800}
+    .hero .subtitle{color:var(--muted);margin-top:6px;font-size:13px}
+
+    /* Projects grid */
+    .projects-title{display:flex;align-items:center;justify-content:space-between;margin:8px 0 12px;}
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:12px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:10px;
+      padding:12px;
+      border:1px solid var(--glass);
+      transition: transform .18s ease, box-shadow .18s ease;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:100px;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    .card .title{font-weight:700}
+    .card .desc{font-size:13px;color:var(--muted);line-height:1.3}
+    .card .meta{margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between}
+    .link-btn{
+      padding:8px 10px;border-radius:8px;border:none;background:transparent;color:var(--accent);
+      font-weight:700;text-decoration:none;font-size:13px;
+    }
+
+    /* Right column - info / clipboard */
+    .right{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      position:relative;
+    }
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:18px;border:1px solid var(--glass);
+    }
+    .panel h3{margin-bottom:8px}
+    .input {
+      width:100%;
+      padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);
+      background:transparent;color:inherit;font-size:14px;box-sizing:border-box;
+    }
+    .copy-row{display:flex;gap:8px;margin-top:10px}
+    .btn{
+      padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;
+      background:linear-gradient(90deg,#3b82f6,#06b6d4);color:#021224;
+      box-shadow:0 6px 18px rgba(6,11,18,0.6);
+    }
+    .btn.secondary{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);
+    }
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+
+    /* Footer */
+    footer{
+      max-width:1100px;margin:0 auto;color:var(--muted);font-size:13px;
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+    }
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .wrap{grid-template-columns: 1fr; padding-bottom:12px}
+      .nav{padding-bottom:8px}
+    }
+    </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="brand">
+      <div class="logo">R</div>
+      <div>
+        <h1 id="siteName">Rohit Vishwakarma</h1>
+        <div style="font-size:12px;color:var(--muted)">Developer • projects • web</div>
+      </div>
+    </div>
+
+    <nav class="actions" aria-label="Main navigation">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/vishwakarmarohit0266" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wrap" role="main">
+    <!-- LEFT: hero + projects -->
+    <section class="left" aria-labelledby="projects">
+      <div class="hero">
+        <div class="avatar" id="initial">RV</div>
+        <div>
+          <div class="name" id="realName">Rohit — Web Developer</div>
+          <div class="subtitle">I build lightweight web projects, clones and small UIs. Click any project to open.</div>
+        </div>
+      </div>
+
+      <div class="projects-title">
+        <strong id="projects">Projects</strong>
+        <span class="small">Updated: <span id="updatedAt">Oct 23, 2025</span></span>
+      </div>
+
+      <div class="grid" id="projectsGrid">
+        <!-- Example project cards — replace these with your own -->
+        <article class="card">
+          <div class="title">Google Clone</div>
+          <div class="desc">A small static Google search clone — responsive and minimal.</div>
+          <div class="meta">
+            <a class="link-btn" href="https://rohit-123-maker.github.io/Google-clone/" target="_blank" rel="noopener">Open</a>
+            <span class="small">HTML • CSS • JS</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="title">Portfolio</div>
+          <div class="desc">Personal portfolio template with hero, projects and contact area.</div>
+          <div class="meta">
+            <a class="link-btn" href="#" target="_blank" rel="noopener">Open</a>
+            <span class="small">HTML • CSS</span>
+          </div>
+        </article>
+
+        <!-- Add more cards here -->
+      </div>
+    </section>
+
+    <!-- RIGHT: quick actions / clipboard -->
+    <aside class="right" aria-labelledby="contact">
+      <div class="panel" id="contact">
+        <h3>Quick copy</h3>
+        <div class="small">Copy your site link or a project URL quickly.</div>
+        <input id="copyInput" class="input" type="text" value="https://vishwakarmarohit0266.github.io/" aria-label="Link to copy">
+        <div class="copy-row">
+          <button id="copyBtn" class="btn">Copy Link</button>
+          <button id="previewBtn" class="btn secondary" onclick="openPreview()">Preview</button>
+        </div>
+        <div id="copyMsg" class="small" aria-live="polite" style="height:18px"></div>
+      </div>
+
+      <div class="panel">
+        <h3>About</h3>
+        <div class="small">Short bio or notes. Replace this text with whatever you want visitors to know — skills, social links, or a short introduction.</div>
+        <div style="height:12px"></div>
+        <a class="link-btn" href="vishwakarmarohit0266@gmail.com">vishwakarmarohit0266@gmail.com</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Rohit Vishwakarma • simple web projects</div>
+    <div>Built with ❤️ • Minimal • Fast</div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy button behavior — smooth UX (button text temporarily changes)
+    const copyBtn = document.getElementById('copyBtn');
+    const copyInput = document.getElementById('copyInput');
+    const copyMsg = document.getElementById('copyMsg');
+
+    copyBtn.addEventListener('click', async () => {
+      const url = copyInput.value.trim();
+      try {
+        await navigator.clipboard.writeText(url);
+        copyBtn.textContent = 'Copied!';
+        copyMsg.textContent = 'Link copied to clipboard';
+        setTimeout(() => { copyBtn.textContent = 'Copy Link'; copyMsg.textContent = ''; }, 2000);
+      } catch (err) {
+        // Fallback: select & execCommand (older browsers)
+        copyInput.select();
+        try {
+          document.execCommand('copy');
+          copyBtn.textContent = 'Copied!';
+          copyMsg.textContent = 'Link copied to clipboard';
+          setTimeout(() => { copyBtn.textContent = 'Copy Link'; copyMsg.textContent = ''; }, 2000);
+        } catch (e) {
+          copyMsg.textContent = 'Unable to copy automatically — select and press Ctrl/Cmd+C';
+          console.error(e);
+        }
+      }
+    });
+
+    function openPreview() {
+      const url = copyInput.value.trim() || location.href;
+      window.open(url, '_blank', 'noopener');
+    }
+
+    // Populate project cards from a JS array (easy to manage)
+    const projects = [
+      {
+        title: 'Google Clone',
+        desc: 'Search UI clone — responsive and minimal.',
+        url: 'https://rohit-123-maker.github.io/Google-clone/',
+        tech: 'HTML • CSS • JS'
+      },
+      {
+        title: 'My Portfolio',
+        desc: 'Static portfolio template.',
+        url: 'https://vishwakarmarohit0266.github.io/',
+        tech: 'HTML • CSS'
+      },
+      // add more objects here
+    ];
+
+    const grid = document.getElementById('projectsGrid');
+    // simple function to render additional cards (keeps HTML tidy)
+    function renderProjects() {
+      // keep existing first-card(s) if any — clear then re-add
+      grid.innerHTML = '';
+      projects.forEach(p => {
+        const art = document.createElement('article');
+        art.className = 'card';
+        art.innerHTML = `
+          <div class="title">${escapeHtml(p.title)}</div>
+          <div class="desc">${escapeHtml(p.desc)}</div>
+          <div class="meta">
+            <a class="link-btn" href="${escapeAttr(p.url)}" target="_blank" rel="noopener">Open</a>
+            <span class="small">${escapeHtml(p.tech)}</span>
+          </div>
+        `;
+        grid.appendChild(art);
+      });
+    }
+
+    // Simple HTML escaping helpers
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+    function escapeAttr(s){ return String(s).replace(/"/g, '&quot;'); }
+
+    renderProjects();
+  </script>
+</body>
+</html>
