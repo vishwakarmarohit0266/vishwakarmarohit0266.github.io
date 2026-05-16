@@ -1,4 +1,4 @@
-    // Simple skill-rotator + typing effect
+   // Simple skill-rotator + typing effect
     (function(){
       const skills = ['HTML5','CSS','JavaScript','Responsive UI','Python-powered features','App UI Cloning'];
       const el = document.getElementById('skillText');
