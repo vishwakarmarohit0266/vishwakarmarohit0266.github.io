@@ -1,32 +1,3 @@
-window.onload=()=>{
-
-renderIcons();
-renderStartMenu();
-updateClock();
-
-setInterval(updateClock,1000);
-
-setTimeout(()=>{
-
-document.getElementById('ultra-loader')
-.style.opacity='0';
-
-document.getElementById('ultra-loader')
-.style.pointerEvents='none';
-
-setTimeout(()=>{
-
-document.getElementById('ultra-loader')
-.remove();
-
-showToast('Welcome To My Portfolio');
-
-},1000);
-
-},5000);
-
-};
-
     // Simple skill-rotator + typing effect
     (function(){
       const skills = ['HTML5','CSS','JavaScript','Responsive UI','Python-powered features','App UI Cloning'];
